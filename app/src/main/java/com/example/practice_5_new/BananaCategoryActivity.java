@@ -24,7 +24,8 @@ public class BananaCategoryActivity extends AppCompatActivity {
         bananaVarieties.add("Грос Мишель");
         bananaVarieties.add("Блю-Джей");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, bananaVarieties);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item,
+                bananaVarieties);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerBananaVarieties.setAdapter(adapter);
 
@@ -32,12 +33,10 @@ public class BananaCategoryActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedVariety = bananaVarieties.get(position);
-                // Здесь можно добавить дополнительную логику при выборе сорта банана
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                // Действие при отсутствии выбора
             }
         });
     }

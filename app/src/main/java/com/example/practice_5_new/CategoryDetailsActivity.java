@@ -21,7 +21,7 @@ public class CategoryDetailsActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         editText = findViewById(R.id.editText);
 
-        String category = getIntent().getStringExtra("category");
+        String category = getIntent().getStringExtra("category"); // Получение названия категории из интента, переданного из предыдущей активности.
         setTitle(category);
 
         items = new ArrayList<>();
@@ -43,8 +43,8 @@ public class CategoryDetailsActivity extends AppCompatActivity {
             items.add("Клементины");
         }
 
-        StringBuilder sb = new StringBuilder();
-        for (String item : items) {
+        StringBuilder sb = new StringBuilder(); // для построения строки из элементов списка
+        for (String item : items) { // Перебор элементов списка и добавление их в StringBuilder
             sb.append(item).append("\n");
         }
         textView.setText(sb.toString());
@@ -55,13 +55,13 @@ public class CategoryDetailsActivity extends AppCompatActivity {
         if (!newItem.isEmpty()) {
             items.add(newItem);
             updateTextView();
-            editText.setText("");
+            editText.setText(""); // Очистка editText после добавления элемента
         }
     }
 
     public void removeItem(View view) {
         if (!items.isEmpty()) {
-            items.remove(items.size() - 1);
+            items.remove(items.size() - 1); // Удаление последнего элемента из списка.
             updateTextView();
         }
     }
